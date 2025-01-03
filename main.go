@@ -26,4 +26,53 @@ func main() {
 	fmt.Println(c)
 	const V = 123 // khai báo hằng V
 	fmt.Println(V)
+
+	// vòng lặp for
+		sum := 0
+		for i :=0; i<10;i++ {
+			sum += i
+		}
+		fmt.Println(sum)
+
+		for ;sum<50; sum ++ {
+			fmt.Println(sum)
+		}
+	// for while và forever
+		for sum <= 100 {
+			fmt.Println(sum)
+			sum += sum
+		}
+		// forever = while(true)
+		/*
+		for {
+			
+		}
+		*/
+	// if switch và defer
+	if sum > 100 {
+		fmt.Println("sum > 100")
+	} else {
+		fmt.Println("sum <= 100")
+	}
+
+	if count := 10; count > 0 {
+		fmt.Println("count > 0")
+	}
+	// khong can break
+	switch sum {
+	case 1:
+		fmt.Println("sum = 1")
+	case 2:
+		fmt.Println("sum = 2")
+	default:
+		fmt.Println("sum khong phai 1 hoac 2")
+	}
+
+	// defer => thực thi ngay trước khi hàm main kết thúc, ứng dụng dọn rác, handle error
+	// defer có tính chất stacking tức last in fisrt out
+	defer fmt.Println("sum = ", sum)
+
+	for i := 0; i < 10; i++ {
+		defer fmt.Println("i = ", i)
+	}
 }
